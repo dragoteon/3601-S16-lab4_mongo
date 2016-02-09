@@ -45,9 +45,15 @@
 
 >Protip: main.html isn't a full HTML document, so how does it get displayed?
 
+> loaded through main.js using angular
+
 ##### Where is the code for the navigation bar located? How is it connected to the pages of the project?
 
+> Location in components folder. loaded through angular through main.html
+
 ##### client/app.js performs client-side routing. How do you think it works?
+
+> through ui.router conmponent
 
 ## Part 2: Add another field to pet data.
 
