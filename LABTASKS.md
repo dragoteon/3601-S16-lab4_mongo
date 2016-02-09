@@ -6,20 +6,40 @@
 
 ##### What are the differences between the folder structure of this project and the previous one? Note that api/pets is server-side routing specific to the database, and the client folder contains the client-side portion of the project.
 
+> Has API folder instead of assets, and public is changed to client. and config is added containing mongo stuff.
+
 ##### How is app.js (at the project root) different from the ones in the previous two labs? Give examples of the kinds of urls that app.js handles, and describe where each case will be routed.
+
+> App.js now contains server information including port and address......may need to be updated.
 
 ##### The project is connected to the database via mongoose. Where is this connection set?
 
+> The connection is set in app.js. mongoose.connect('mongodb://127.0.0.1:27017/pets');
+
 ##### Explain how api/pets/pets.controller.js gets added to app.js (remember this is all server-side).
+
+> App.js uses app.use to show dependancy.
 
 ##### Study the file api/pets/pets.controller.js, answer the following questions:
 -  What kind of documents would the database contain? What is the field in the model?
+
+> pet documents containing strings
+
 -  What functions are defined in the controller? How do they change the database data?
+
+> index, create , and destroy. index finds at an idex, create creates at an index, destroy...well....destroys at an index.
+
 -  How does one get or delete elements in the database?
+
+> index gets, and delete destroys.
 
 ##### What is the purpose of index.js in the api/pets? Where is it referenced?
 
+> Index.js redirects traffic
+
 ##### What views are used in the project?
+
+> 404, about, and main
 
 ##### We've seen a few different ways to display HTML in the last couple labs (straight, individual HTML pages and components being added to HTML). How are HTML files combined and displayed in this lab? 
 
