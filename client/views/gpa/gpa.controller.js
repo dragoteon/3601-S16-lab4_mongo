@@ -27,12 +27,6 @@ angular.module("appModule")
             });
         };
 
-        self.removeData = function(index){
-            $http.delete('/api/grades/' + self.data[index]._id).success(function(){
-                GPACtrl.getGrades();
-            });
-        };
-
         GPACtrl.getGrades();
 
         GPACtrl.addData = function(){
@@ -69,8 +63,11 @@ angular.module("appModule")
         };
 
         GPACtrl.removeData = function(index){
-            GPACtrl.data.splice(index, 1);
-            GPACtrl.currentGPA = GPACtrl.calcGPA(GPACtrl.data);
+
+            $http.delete('/api/grades/' + GPACtrl.data[index]._id).success(function(){
+                GPACtrl.getGrades();
+            });
+
         };
 
         GPACtrl.itemsInList = function(){

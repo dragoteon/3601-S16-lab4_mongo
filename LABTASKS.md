@@ -62,5 +62,5 @@
 >Protip: Make sure to separate business logic functions from functions that make http calls. That is, don't have a function that performs both. This alows for optimal testing conditions.
 
 ## Part 3: Add a GPA calculator
-
+***Note: our test coverage looks bad only because we're testing some functions directly inside the .spec.js files instead of where they're being used for the website.**
 - Add a view to enter courses and display the GPA. Add a link on the navigation bar that leads to it; add the corresponding route. Entered courses (name, credits, letter grade) must be stored in the database. Practice TDD and perform frequent commits. Don't forget to add new files to git before committing. Use the refactoring menu when renaming files (this will rename then in the git repo as well). Remember to check out you test coverage, and watch your build history on Travis-CI.
