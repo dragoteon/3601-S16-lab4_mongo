@@ -5,7 +5,7 @@
 
 
 var express = require('express');
-var controller = require('./grades.controller.js');
+var controller = require('./gpa.controller.js');
 
 var router = express.Router();
 

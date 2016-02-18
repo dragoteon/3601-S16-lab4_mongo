@@ -1,31 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title> GPA Calculator </title>
-
-    <!-- Loading Stylesheets -->
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
-    <!-- this makes the bootstrap.css visible to WebStorm so that it can provide suggestions for code completion -->
-    <link rel="stylesheet" type="text/css" href="../../bootstrap/dist/css/bootstrap.css">
-
-    <!-- Loading Javascript Stuff -->
-    <script type="text/javascript" src="javascript/clientJavascript.js"></script>
-    <script type="text/javascript" src="angularjs/angular.js"></script>
-
-    <script type="text/javascript" src="javascript/app.js"></script>
-    <script type="text/javascript" src="javascript/main.controller.js"></script>
-    <script type="text/javascript" src="javascript/navbar.controller.js"></script>
-    <script type="text/javascript" src="javascript/footer.controller.js"></script>
-    <script type="text/javascript" src="javascript/GPA.controller.js"></script>
-</head>
-
-<body ng-app="mainApp" ng-controller="GPACtrl as GPAControl">
-
-<div ng-include="'views/navbar.html'"></div>
-
-<div class="container">
+<div ng-include="'components/navbar/navbar.html'"></div><div class="container">
     <ul class="list-group">
         <li class="list-group-item">
 
@@ -44,25 +17,21 @@
                 <option value="F">
             </datalist>
 
-            <form ng-submit="GPAControl.addData()">
-                <input ng-model="GPAControl.textField" type="text" size="25" placeholder="Add a new class...">
-                <input ng-model="GPAControl.gradeField" list="letterGrades" name="letterGrade1" size="25" placeholder="Add class's grade..."/>
+            <form ng-submit="GPACtrl.addData()">
+                <input ng-model="GPACtrl.textField" type="text" size="25" placeholder="Add a new class...">
+                <input ng-model="GPACtrl.gradeField" list="letterGrades" name="letterGrade1" size="25" placeholder="Add class's grade..."/>
                 <!--<input ng-model="GPAControl.gradeField" type="text" size="25" placeholder="Add class's grade..."> -->
-                <input ng-model="GPAControl.creditField" type="text" size="25" placeholder="Add class's credit count...">
+                <input ng-model="GPACtrl.creditField" type="text" size="25" placeholder="Add class's credit count...">
                 <input type="submit" value="submit" class="btn btn-primary">
-                <span class="floatRight">Classes listed: {{GPAControl.itemsInList()}}
+                <span class="floatRight">Classes listed: {{GPACtrl.itemsInList()}}
                 <br>
-                <span class="floatRight" ng-class="{red: GPAControl.currentGPA <= 2.0, yellow: GPAControl.currentGPA > 2.0 && GPAControl.currentGPA <= 3.0, green: GPAControl.currentGPA > 3.0}"> Current GPA: {{GPAControl.currentGPA}} </span>
+                <span class="floatRight" ng-class="{red: GPACtrl.currentGPA <= 2.0, yellow: GPACtrl.currentGPA > 2.0 && GPACtrl.currentGPA <= 3.0, green: GPACtrl.currentGPA > 3.0}"> Current GPA: {{GPACtrl.currentGPA}} </span>
                 </span>
             </form>
 
         </li>
-        <li class="list-group-item" ng-repeat="test in GPAControl.data">Class name: {{test.classname}} | Grade: {{test.grade}} | Credit value: {{test.credits}} <span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="GPAControl.removeData($index)"></span></li>
+        <li class="list-group-item" ng-repeat="test in GPACtrl.data">Class name: {{test.classname}} | Grade: {{test.grade}} | Credit value: {{test.credits}} <span class="glyphicon glyphicon-trash floatRight" style="color: red" ng-click="GPACtrl.removeData($index)"></span></li>
     </ul>
 </div>
 
 <div ng-include="'views/footer.html'"></div>
-
-</body>
-
-</html>
