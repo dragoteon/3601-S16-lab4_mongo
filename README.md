@@ -31,7 +31,7 @@ grunt test
 ````
 Or run karma through the Webstorm GUI.
 
-# Travis-CI
+# Travis-CI
 
 By now, you should know the drill. Set up Travis as you did in Lab 3, and refer back to that if you have forgotten how to.
 
@@ -45,6 +45,9 @@ Getting started with mongo:
 http://mongly.openmymind.net/tutorial/index
 
 
+travis
+
+[![Build Status](https://travis-ci.org/dragoteon/3601-S16-lab4_mongo.svg?branch=master)](https://travis-ci.org/dragoteon/3601-S16-lab4_mongo)
 
 
 
